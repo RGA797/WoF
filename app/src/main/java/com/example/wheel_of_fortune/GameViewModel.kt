@@ -82,8 +82,10 @@ class GameViewModel: ViewModel() {
             var j = 0
             for (i in currentWordClass.getWordString()) {
                 if (guess.equals(i)) {
-                    lettersGuessed++
-                    changeHiddenWordStringIndex(j, guess)
+                    if (currentWordClass.getHiddenWordString()[j] == '#') {
+                        lettersGuessed++
+                        changeHiddenWordStringIndex(j, guess)
+                    }
                 }
                 j++
             }
