@@ -34,8 +34,7 @@ class Wordbank {
         Word("Phobias", "hydrophobia")
     )
     fun getRandomWord(): Word {
-            val wordList_Lengt = wordList.size
-            val random_Number = Random().nextInt(wordList_Lengt-1)
+            val random_Number = Random().nextInt(wordList.size)
             return wordList[random_Number]
         }
 }
