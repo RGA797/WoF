@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Wheel_of_fortune</string>
+    <string name="playButton">play!</string>
+    <string name="play">play</string>
+    <string name="quit">Quit</string>
+    <string name="spin">Spin</string>
+    <string name="textview">TextView</string>
+    <string name="genre_t">Genre:</string>
+    <string name="genre">%s</string>
+    <string name="word_t">Word:</string>
+    <string name="word">%s:</string>
+    <string name="wordLength">%d:</string>
+    <string name="points_t">Points:</string>
+    <string name="points">%d</string>
+    <string name="most_recent_spin">Most recent spin</string>
+    <string name="pointsTitle">Points:</string>
+    <string name="life_t">Lives:</string>
+    <string name="life"> %d</string>
+    <string name="hiddenWord"> %s</string>
+    <string name="recentSpin_t">Spin result:</string>
+    <string name="recentSpin"> %s</string>
+    <string name="play_again">Play again</string>
+    <string name="enter_guess">Enter guess</string>
+    <string name="guess_a_letter">Guess a letter</string>
+    <string name="game_over">Game Over!</string>
+    <string name="victory">Victory!</string>
+    <string name="victoryResult">you won with %d points!</string>
+    <string name="lossResult">you lost with %d points!</string>
+</resources>
