@@ -69,7 +69,7 @@ class GameViewModel: ViewModel() {
     fun wordsAreGuessed(): Boolean {
         var bool = true
         for (i in currentWordClass.getHiddenWordString()) {
-            if (i == '#' ||  i == ' '){
+            if (i == '#'){
                 bool = false
             }
         }
