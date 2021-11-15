@@ -9,16 +9,13 @@ class GameViewModel: ViewModel() {
     private var player = Player(0, 5)
     private var wheel = Wheel()
     private var currentWordClass: Word = wordbank.getRandomWord()
-
     private val _currentWord =  MutableLiveData(currentWordClass.getWordString())
     val currentWord: LiveData<String>
         get() = _currentWord
-
-    private val _currentHiddenWord =  MutableLiveData(currentWordClass.getHiddenWordString())
+    private val _currentHiddenWord = MutableLiveData(currentWordClass.getHiddenWordString())
     val currentHiddenWord: LiveData<String>
         get() = _currentHiddenWord
-
-    private val _currentWordLength =  MutableLiveData(currentWordClass.getWordString().length)
+    private val _currentWordLength = MutableLiveData(currentWordClass.getWordString().length)
     val currentWordLength: LiveData<Int>
         get() = _currentWordLength
     private val _currentGenre =  MutableLiveData(currentWordClass.getWordGenre())

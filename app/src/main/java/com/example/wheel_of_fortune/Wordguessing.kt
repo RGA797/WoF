@@ -11,6 +11,7 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.example.wheel_of_fortune.databinding.FragmentWordguessingBinding
@@ -18,7 +19,7 @@ import com.example.wheel_of_fortune.databinding.FragmentWordguessingBinding
 class Wordguessing : Fragment() {
 
     private lateinit var binding: FragmentWordguessingBinding
-    private val gameViewModel: GameViewModel by viewModels()
+    private val gameViewModel: GameViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
