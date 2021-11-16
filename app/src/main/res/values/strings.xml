@@ -17,6 +17,7 @@
     <string name="recentSpin_t">Spin result:</string>
     <string name="recentSpin"> %s</string>
     <string name="enter_guess">Enter guess</string>
+    <string name="guess_a_letter">Guess a letter</string>
     <string name="game_over">Game Over!</string>
     <string name="victory">Victory!</string>
     <string name="victoryResult">you won with %d points!</string>

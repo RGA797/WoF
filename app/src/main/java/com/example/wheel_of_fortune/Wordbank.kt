@@ -1,6 +1,7 @@
 package com.example.wheel_of_fortune
 import java.util.*
 
+//This class function is to hold Word classes, and give one at random
 class Wordbank {
     private val wordList = arrayOf(
         Word("Animals", "cat"),
@@ -33,6 +34,8 @@ class Wordbank {
         Word("Phobias", "claustrophobia"),
         Word("Phobias", "hydrophobia")
     )
+
+    //this function returns a random word corresponding to the length of the wordList
     fun getRandomWord(): Word {
             val random_Number = Random().nextInt(wordList.size)
             return wordList[random_Number]

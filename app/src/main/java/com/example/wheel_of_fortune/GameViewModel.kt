@@ -4,20 +4,13 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
+//this is the viewmodel for the game. observer pattern is implemented by way of LiveData, and databinding here
+//it is also here the model classes are initiated, following the app architecture of MVVM
 class GameViewModel: ViewModel() {
     private var wordbank = Wordbank()
     private var player = Player(0, 5)
     private var wheel = Wheel()
     private var currentWordClass: Word = wordbank.getRandomWord()
-    private val _currentWord =  MutableLiveData(currentWordClass.getWordString())
-    val currentWord: LiveData<String>
-        get() = _currentWord
-    private val _currentHiddenWord = MutableLiveData(currentWordClass.getHiddenWordString())
-    val currentHiddenWord: LiveData<String>
-        get() = _currentHiddenWord
-    private val _currentWordLength = MutableLiveData(currentWordClass.getWordString().length)
-    val currentWordLength: LiveData<Int>
-        get() = _currentWordLength
     private val _currentGenre =  MutableLiveData(currentWordClass.getWordGenre())
     val currentGenre: LiveData<String>
         get() = _currentGenre
@@ -45,9 +38,6 @@ class GameViewModel: ViewModel() {
         player = Player(0, 5)
         wheel = Wheel()
         currentWordClass = wordbank.getRandomWord()
-        _currentWord.value =  currentWordClass.getWordString()
-        _currentHiddenWord.value =  currentWordClass.getHiddenWordString()
-        _currentWordLength.value =  currentWordClass.getWordString().length
         _currentGenre.value =  currentWordClass.getWordGenre()
         _recentSpinResult.value = wheel.getRecentSpinResult()
         _points.value = player.getPoints()
@@ -56,7 +46,6 @@ class GameViewModel: ViewModel() {
 
     fun changeHiddenWordStringIndex(index: Int, newChar: Char){
         currentWordClass.setHiddenWordStringIndex(index, newChar)
-        _currentHiddenWord.value = currentWordClass.getHiddenWordString()
     }
 
     fun changePlayerPoints(value: Int){
