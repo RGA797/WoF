@@ -8,10 +8,8 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.example.wheel_of_fortune.databinding.FragmentGameoverBinding
-import com.example.wheel_of_fortune.databinding.FragmentWordguessingBinding
 
 
 //game over fragmens class.
@@ -31,5 +29,14 @@ class gameover : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
         binding.gameViewModel = gameViewModel
+
+
+        binding.gameoverPlayAgainButton.setOnClickListener(){
+            Navigation.findNavController(binding.root).navigate(R.id.navigateFromGameoverToWordguessing)
+        }
+
     }
+
+
+
 }

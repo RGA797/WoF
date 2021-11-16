@@ -14,12 +14,20 @@
         android:id="@+id/victory"
         android:name="com.example.wheel_of_fortune.Victory"
         android:label="fragment_victory"
-        tools:layout="@layout/fragment_victory" />
+        tools:layout="@layout/fragment_victory" >
+        <action
+            android:id="@+id/navigateFromVictoryToWordguessing"
+            app:destination="@id/wordguessing" />
+    </fragment>
     <fragment
         android:id="@+id/gameover"
         android:name="com.example.wheel_of_fortune.gameover"
         android:label="fragment_gameover"
-        tools:layout="@layout/fragment_gameover" />
+        tools:layout="@layout/fragment_gameover" >
+        <action
+            android:id="@+id/navigateFromGameoverToWordguessing"
+            app:destination="@id/wordguessing" />
+    </fragment>
     <fragment
         android:id="@+id/wordguessing"
         android:name="com.example.wheel_of_fortune.Wordguessing"

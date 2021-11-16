@@ -22,4 +22,5 @@
     <string name="victory">Victory!</string>
     <string name="victoryResult">you won with %d points!</string>
     <string name="lossResult">you lost with %d points!</string>
+    <string name="play_again">play again</string>
 </resources>
