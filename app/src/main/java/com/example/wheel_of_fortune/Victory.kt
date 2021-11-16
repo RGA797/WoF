@@ -13,7 +13,7 @@ import androidx.navigation.Navigation
 import com.example.wheel_of_fortune.databinding.FragmentGameoverBinding
 import com.example.wheel_of_fortune.databinding.FragmentVictoryBinding
 
-
+//victory screen fragment class
 class Victory : Fragment() {
 
     private lateinit var binding: FragmentVictoryBinding

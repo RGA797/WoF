@@ -14,6 +14,7 @@ import com.example.wheel_of_fortune.databinding.FragmentGameoverBinding
 import com.example.wheel_of_fortune.databinding.FragmentWordguessingBinding
 
 
+//game over fragmens class.
 class gameover : Fragment() {
 
     private lateinit var binding: FragmentGameoverBinding

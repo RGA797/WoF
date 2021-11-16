@@ -17,9 +17,11 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wheel_of_fortune.databinding.FragmentWordguessingBinding
 
+//wordguessing screen fragment class. this is the class with most of the view implementations
 class Wordguessing : Fragment() {
 
     private lateinit var binding: FragmentWordguessingBinding
+    //viewmodel is made here. using activitymodels for the instantiation, it can be shared among other fragments
     private val gameViewModel: GameViewModel by activityViewModels()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,14 +54,19 @@ class Wordguessing : Fragment() {
     }
 
 
-
+    //logic for enter button
     fun onEnter() {
         if (!TextUtils.isEmpty(binding.editText.text)) {
+            //takes entered letter of edittext and uses viewmodel submitguess method. visibility of
             gameViewModel.submitGuess(binding.editText.text[0])
             hideKeyboard()
+            //enter button and edittext made invisible after being pressed. spin button is made visible
             binding.spinButton.visibility = VISIBLE
             binding.editText.visibility = INVISIBLE
             binding.enterButton.visibility = INVISIBLE
+
+
+            //if the player has lost or won, the game is reset, and a we used navigation to go to other fragments
             if (!gameViewModel.playerHasLives()) {
                 gameViewModel.resetGame()
                 Navigation.findNavController(binding.root).navigate(R.id.navigateToGameover)
@@ -67,34 +74,48 @@ class Wordguessing : Fragment() {
                 gameViewModel.resetGame()
                 Navigation.findNavController(binding.root).navigate(R.id.navigateToVictory)
             }
+
+            //recyclerview updated
             updateRecycler()
         }
     }
 
+    //wuit button logic. game is reset and we navigate to menu
     fun onQuit(){
         gameViewModel.resetGame()
         updateRecycler()
         Navigation.findNavController(binding.root).navigate(R.id.navigateToMenu)
     }
 
-
+    //spin button logic
     fun onSpin(){
+
+        //viewmodel spinwheel model returns a spin result
         val wheelValue = gameViewModel.spinWheel()
 
+
+        //depending on the result, a player can either guess, lose/gain a life or go Bankrupt.
         if (wheelValue > 0) {
+            //spin button made invisible, but the player can now guess using edittext and submit button
             binding.spinButton.visibility = INVISIBLE
             binding.editText.visibility = VISIBLE
             binding.enterButton.visibility = VISIBLE
         }
+
+        //player gains a life
         if (wheelValue == -1){
             gameViewModel.changePlayerlife(1)
         }
+
+        //player loses a life
         if (wheelValue == -2){
             gameViewModel.changePlayerlife(-1)
             if (!gameViewModel.playerHasLives()){
                 Navigation.findNavController(binding.root).navigate(R.id.navigateToGameover)
             }
         }
+
+        //player goes bankrupt
         if (wheelValue == -3){
             gameViewModel.setPlayerPoints(0)
         }
@@ -111,6 +132,7 @@ class Wordguessing : Fragment() {
         view?.let { activity?.hideKeyboard(it) }
     }
 
+    //this function should update the recyclerview. this doesnt use databinding, and is done manually. there might be a better way to do this.
     fun updateRecycler(){
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
