@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 
 //this is the viewmodel for the game. observer pattern is implemented by way of LiveData, and databinding here
 //it is also here the model classes are initiated, following the app architecture of MVVM.
+// inspiration for implementation of livedata and databinding gotten from: https://github.com/google-developer-training/android-basics-kotlin-unscramble-app/tree/main
 class GameViewModel: ViewModel() {
 
     //initiating models and livedata
