@@ -3,6 +3,7 @@ package com.example.wheel_of_fortune
 import android.app.Activity
 import android.content.Context
 import android.os.Bundle
+import android.text.TextUtils
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,8 +13,8 @@ import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wheel_of_fortune.databinding.FragmentWordguessingBinding
 
 class Wordguessing : Fragment() {
@@ -45,25 +46,37 @@ class Wordguessing : Fragment() {
         binding.enterButton.setOnClickListener{ onEnter() }
 
         //quit button sends you to the menu fragment
-        binding.quitButton.setOnClickListener{ Navigation.findNavController(binding.root).navigate(R.id.navigateToMenu) }
+        binding.quitButton.setOnClickListener{ onQuit() }
 
+        updateRecycler()
     }
 
-    fun onEnter(){
-        gameViewModel.submitGuess(binding.editText.text[0])
-        hideKeyboard()
-        binding.spinButton.visibility = VISIBLE
-        binding.editText.visibility = INVISIBLE
-        binding.enterButton.visibility = INVISIBLE
-        if (!gameViewModel.playerHasLives()){
-            gameViewModel.resetGame()
-            Navigation.findNavController(binding.root).navigate(R.id.navigateToGameover)
-        }
-        if (gameViewModel.wordsAreGuessed()){
-            gameViewModel.resetGame()
-            Navigation.findNavController(binding.root).navigate(R.id.navigateToVictory)
+
+
+    fun onEnter() {
+        if (!TextUtils.isEmpty(binding.editText.text)) {
+            gameViewModel.submitGuess(binding.editText.text[0])
+            hideKeyboard()
+            binding.spinButton.visibility = VISIBLE
+            binding.editText.visibility = INVISIBLE
+            binding.enterButton.visibility = INVISIBLE
+            if (!gameViewModel.playerHasLives()) {
+                gameViewModel.resetGame()
+                Navigation.findNavController(binding.root).navigate(R.id.navigateToGameover)
+            } else if (gameViewModel.wordsAreGuessed()) {
+                gameViewModel.resetGame()
+                Navigation.findNavController(binding.root).navigate(R.id.navigateToVictory)
+            }
+            updateRecycler()
         }
     }
+
+    fun onQuit(){
+        gameViewModel.resetGame()
+        updateRecycler()
+        Navigation.findNavController(binding.root).navigate(R.id.navigateToMenu)
+    }
+
 
     fun onSpin(){
         val wheelValue = gameViewModel.spinWheel()
@@ -96,5 +109,13 @@ class Wordguessing : Fragment() {
 
     fun Fragment.hideKeyboard() {
         view?.let { activity?.hideKeyboard(it) }
+    }
+
+    fun updateRecycler(){
+        binding.recyclerView.apply {
+            layoutManager = LinearLayoutManager(activity)
+            val list = listOf(gameViewModel.getHiddenWord())
+            adapter = RecyclerViewAdapter(list, context)
+        }
     }
 }

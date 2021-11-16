@@ -107,4 +107,9 @@ class GameViewModel: ViewModel() {
         _recentSpinResult.value = wheel.getRecentSpinResult()
         return value
     }
+
+    fun getHiddenWord(): String {
+        return currentWordClass.getHiddenWordString()
+    }
+
 }
