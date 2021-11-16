@@ -30,6 +30,9 @@ class GameViewModel: ViewModel() {
     private val _life = MutableLiveData(player.getLife())
     val life: LiveData<Int>
         get() = _life
+    private val _lastResult =  MutableLiveData(0)
+    val lastResult: LiveData<Int>
+        get() = _lastResult
 
 
     fun changePlayerlife(value: Int){
@@ -38,6 +41,7 @@ class GameViewModel: ViewModel() {
     }
 
     fun resetGame(){
+        _lastResult.value = player.getPoints()
         player = Player(0, 5)
         wheel = Wheel()
         currentWordClass = wordbank.getRandomWord()
@@ -78,7 +82,7 @@ class GameViewModel: ViewModel() {
         if (guess != '#') {
             var j = 0
             for (i in currentWordClass.getWordString()) {
-                if (guess.equals(i)) {
+                if (guess.equals(i, ignoreCase = true)) {
                     if (currentWordClass.getHiddenWordString()[j] == '#') {
                         lettersGuessed++
                         changeHiddenWordStringIndex(j, guess)
@@ -103,5 +107,4 @@ class GameViewModel: ViewModel() {
         _recentSpinResult.value = wheel.getRecentSpinResult()
         return value
     }
-
 }
