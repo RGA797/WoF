@@ -110,7 +110,8 @@ class Wordguessing : Fragment() {
         //player loses a life
         if (wheelValue == -2){
             gameViewModel.changePlayerlife(-1)
-            if (!gameViewModel.playerHasLives()){
+            if (!gameViewModel.playerHasLives()) {
+                gameViewModel.resetGame()
                 Navigation.findNavController(binding.root).navigate(R.id.navigateToGameover)
             }
         }
