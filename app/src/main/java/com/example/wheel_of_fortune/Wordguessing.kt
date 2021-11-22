@@ -50,9 +50,9 @@ class Wordguessing : Fragment() {
         //quit button sends you to the menu fragment
         binding.quitButton.setOnClickListener{ onQuit() }
 
+        //recyclerview updated
         updateRecycler()
     }
-
 
     //logic for enter button
     fun onEnter() {
@@ -80,7 +80,7 @@ class Wordguessing : Fragment() {
         }
     }
 
-    //wuit button logic. game is reset and we navigate to menu
+    //quit button logic. game is reset and we navigate to menu
     fun onQuit(){
         gameViewModel.resetGame()
         updateRecycler()
@@ -121,7 +121,6 @@ class Wordguessing : Fragment() {
             gameViewModel.setPlayerPoints(0)
         }
     }
-
     //code for hiding keyboard gotten from stackoverflow https://stackoverflow.com/questions/41790357/close-hide-the-android-soft-keyboard-with-kotlin
     fun Context.hideKeyboard(view: View) {
         val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -133,7 +132,9 @@ class Wordguessing : Fragment() {
         view?.let { activity?.hideKeyboard(it) }
     }
 
-    //this function should update the recyclerview. this doesnt use databinding, and is done manually. there might be a better way to do this.
+    //this function should update the recyclerview. this doesnt use databinding, and is done manually. there may be a better way to do this, but none was found.
+    //the recyclerview uses hiddenword as per the requirements before NFR_5 changes before the changes on november 22th.
+    //significant time and effort has ben spent implementing this, so this will not be changed.
     fun updateRecycler(){
         binding.recyclerView.apply {
             layoutManager = LinearLayoutManager(activity)
