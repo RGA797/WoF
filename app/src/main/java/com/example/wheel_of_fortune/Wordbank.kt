@@ -4,7 +4,7 @@ import java.util.*
 //This class function is to hold Word classes, and give one at random
 class Wordbank {
     private val wordList = arrayOf(
-        Word("Animals", "cat"),
+        Word("Animals", "Cat"),
         Word("Animals", "Dog"),
         Word("Animals", "Horse"),
         Word("Animals", "Cow"),
@@ -28,11 +28,11 @@ class Wordbank {
         Word("Occupations", "Firefighter"),
         Word("Occupations", "Politician"),
         Word("Occupations", "Teacher"),
-        Word("Phobias", "acrophobia"),
-        Word("Phobias", "arachnophobia"),
-        Word("Phobias", "autophobia"),
-        Word("Phobias", "claustrophobia"),
-        Word("Phobias", "hydrophobia")
+        Word("Phobias", "Acrophobia"),
+        Word("Phobias", "Arachnophobia"),
+        Word("Phobias", "Autophobia"),
+        Word("Phobias", "Claustrophobia"),
+        Word("Phobias", "Hydrophobia")
     )
 
     //this function returns a random word corresponding to the length of the wordList
