@@ -1,19 +1,20 @@
-package com.example.wheel_of_fortune
+package com.example.wheel_of_fortune.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
+import com.example.wheel_of_fortune.R
 import com.example.wheel_of_fortune.databinding.FragmentGameoverBinding
+import com.example.wheel_of_fortune.viewModel.GameViewModel
 
 
 //game over fragmens class.
-class gameover : Fragment() {
+class Gameover : Fragment() {
 
     private lateinit var binding: FragmentGameoverBinding
     private val gameViewModel: GameViewModel by activityViewModels()

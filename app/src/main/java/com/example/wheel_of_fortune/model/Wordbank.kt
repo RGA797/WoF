@@ -1,4 +1,5 @@
-package com.example.wheel_of_fortune
+package com.example.wheel_of_fortune.model
+import com.example.wheel_of_fortune.model.Word
 import java.util.*
 
 //This class function is to hold Word classes, and give one at random

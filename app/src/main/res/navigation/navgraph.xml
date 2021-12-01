@@ -7,12 +7,12 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.wheel_of_fortune.MainActivity"
+        android:name="com.example.wheel_of_fortune.view.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/victory"
-        android:name="com.example.wheel_of_fortune.Victory"
+        android:name="com.example.wheel_of_fortune.view.Victory"
         android:label="fragment_victory"
         tools:layout="@layout/fragment_victory" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/gameover"
-        android:name="com.example.wheel_of_fortune.gameover"
+        android:name="com.example.wheel_of_fortune.view.Gameover"
         android:label="fragment_gameover"
         tools:layout="@layout/fragment_gameover" >
         <action
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/wordguessing"
-        android:name="com.example.wheel_of_fortune.Wordguessing"
+        android:name="com.example.wheel_of_fortune.view.Wordguessing"
         android:label="fragment_wordguessing"
         tools:layout="@layout/fragment_wordguessing" >
         <action
@@ -45,7 +45,7 @@
     </fragment>
     <fragment
         android:id="@+id/menu"
-        android:name="com.example.wheel_of_fortune.menu"
+        android:name="com.example.wheel_of_fortune.view.Menu"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action

@@ -1,4 +1,4 @@
-package com.example.wheel_of_fortune
+package com.example.wheel_of_fortune.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wheel_of_fortune.R
 
 //this adapter was made with the following tutorial: https://www.section.io/engineering-education/implementing-mvvm-architecture-in-android-using-kotlin/
 class RecyclerViewAdapter(private val List: List<String>, val context: Context): RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder>() {

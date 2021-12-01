@@ -7,13 +7,13 @@
     <data>
         <variable
             name="gameViewModel"
-            type="com.example.wheel_of_fortune.GameViewModel" />
+            type="com.example.wheel_of_fortune.viewModel.GameViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Victory">
+    tools:context=".view.Victory">
 
     <TextView
         android:id="@+id/textView2"

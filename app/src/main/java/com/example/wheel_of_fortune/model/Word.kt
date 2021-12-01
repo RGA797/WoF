@@ -1,4 +1,4 @@
-package com.example.wheel_of_fortune
+package com.example.wheel_of_fortune.model
 
 
 //Model class, used to keep track of wordstrings and their corresponding genre and hiddenWordString
@@ -24,13 +24,13 @@ class Word(val genre: String, val word_string: String){
     //this is done with the following function that returns hiddenString
     fun createHiddenWord(): String{
         var hiddenString: String = ""
-        for (i in word_string)
+        for (i in word_string) {
             if (i.isLetter()) {
                 hiddenString = hiddenString.plus('#')
-            }
-            else{
+            } else {
                 hiddenString = hiddenString.plus(' ')
             }
+        }
         return hiddenString
     }
 

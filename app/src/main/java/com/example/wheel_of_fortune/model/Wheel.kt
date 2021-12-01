@@ -1,4 +1,4 @@
-package com.example.wheel_of_fortune
+package com.example.wheel_of_fortune.model
 
 import java.util.*
 

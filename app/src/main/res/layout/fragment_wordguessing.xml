@@ -9,14 +9,14 @@
     <data>
         <variable
             name="gameViewModel"
-            type="com.example.wheel_of_fortune.GameViewModel" />
+            type="com.example.wheel_of_fortune.viewModel.GameViewModel" />
     </data>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Wordguessing">
+        tools:context=".view.Wordguessing">
 
         <TextView
             android:id="@+id/wordTitle"

@@ -1,8 +1,12 @@
-package com.example.wheel_of_fortune
+package com.example.wheel_of_fortune.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.wheel_of_fortune.model.Player
+import com.example.wheel_of_fortune.model.Wheel
+import com.example.wheel_of_fortune.model.Wordbank
+import com.example.wheel_of_fortune.model.Word
 
 //this is the viewmodel for the game. observer pattern is implemented by way of LiveData, and databinding here
 //it is also here the model classes are initiated, following the app architecture of MVVM.

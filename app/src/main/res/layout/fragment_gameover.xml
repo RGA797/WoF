@@ -8,14 +8,14 @@
     <data>
         <variable
             name="gameViewModel"
-            type="com.example.wheel_of_fortune.GameViewModel" />
+            type="com.example.wheel_of_fortune.viewModel.GameViewModel" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".gameover">
+    tools:context=".view.Gameover">
 
     <!-- TODO: Update blank fragment layout -->
 

@@ -1,4 +1,4 @@
-package com.example.wheel_of_fortune
+package com.example.wheel_of_fortune.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
+import com.example.wheel_of_fortune.R
 import com.example.wheel_of_fortune.databinding.FragmentVictoryBinding
+import com.example.wheel_of_fortune.viewModel.GameViewModel
 
 //victory screen fragment class
 class Victory : Fragment() {

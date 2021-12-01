@@ -1,4 +1,4 @@
-package com.example.wheel_of_fortune
+package com.example.wheel_of_fortune.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.Navigation
+import com.example.wheel_of_fortune.R
 
 
-class menu : Fragment() {
+class Menu : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {

@@ -1,4 +1,4 @@
-package com.example.wheel_of_fortune
+package com.example.wheel_of_fortune.view
 
 import android.app.Activity
 import android.content.Context
@@ -15,7 +15,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.wheel_of_fortune.R
+import com.example.wheel_of_fortune.adapter.RecyclerViewAdapter
 import com.example.wheel_of_fortune.databinding.FragmentWordguessingBinding
+import com.example.wheel_of_fortune.viewModel.GameViewModel
 
 //wordguessing screen fragment class. this is the class with most of the view implementations
 class Wordguessing : Fragment() {
