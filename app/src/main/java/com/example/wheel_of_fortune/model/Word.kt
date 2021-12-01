@@ -41,4 +41,8 @@ class Word(val genre: String, val word_string: String){
     fun getWordString(): String {
         return word_string
     }
+
+    fun setHiddenWord(string: String){
+        hiddenWord = string
+    }
 }

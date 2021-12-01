@@ -44,6 +44,7 @@ class GameViewModel: ViewModel() {
         _lastResult.value = player.getPoints()
         player = Player(0, 5)
         wheel = Wheel()
+        currentWordClass.setHiddenWord(currentWordClass.createHiddenWord())
         currentWordClass = wordbank.getRandomWord()
         _currentGenre.value =  currentWordClass.getWordGenre()
         _recentSpinResult.value = wheel.getRecentSpinResult()
