@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Colors resource. everything except themegreen gotten from https://stackoverflow.com/questions/3769762/web-colors-in-an-android-color-xml-resource-file-->
 <resources>
     <color name="white">#FFFFFF</color>
     <color name="yellow">#FFFF00</color>
